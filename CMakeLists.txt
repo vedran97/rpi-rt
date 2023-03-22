@@ -118,7 +118,7 @@ ${catkin_INCLUDE_DIRS}
 
 ## Declare a C++ library
 add_library(${PROJECT_NAME}
-  src/${PROJECT_NAME}/rpi-rt.cpp
+  src/${PROJECT_NAME}/rt.cpp
 )
 
 ## Add cmake target dependencies of the library
