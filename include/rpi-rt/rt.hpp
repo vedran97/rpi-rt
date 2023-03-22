@@ -1,7 +1,10 @@
 #ifndef RPI_RT_H_
 #define RPI_RT_H_
+
+#include  <stddef.h>
+#include  <assert.h>
 namespace rpi_rt{
-enum class CPUS{
+enum class CPUS:size_t{
 CPU1,
 CPU2,
 CPU3,
@@ -20,22 +23,23 @@ public:
     priority(priority),
     memoryToBeLocked(memoryToBeLocked)
     {
-
+        assert((this->priority)>0);
+        assert((this->memoryToBeLocked)>0);
     }
     /// @brief Pins the calling thread to a CPU Core mentioned in the constructor
-    void applyAffinity();
+    void applyAffinity()const;
 
     /// @brief Applies specified thread priority to the calling thread
-    void applyPriority();
+    void applyPriority()const;
 
     /// @brief Allocates and locks memory for the caller
-    void applyMemoryLock();
+    void applyMemoryLock()const;
 
     /// @brief Changes power governance mode of CPU to high performance mode
-    void applyHighPerformancemode();
+    void applyHighPerformancemode()const;
 
     /// @brief Changes RT_SCHED time to -1
-    void applySchedulingTimeChange();
+    void applySchedulingTimeChange()const;
 };
 
 };
