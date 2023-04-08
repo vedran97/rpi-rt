@@ -119,7 +119,7 @@ ${catkin_INCLUDE_DIRS}
 add_library(${PROJECT_NAME}
   src/${PROJECT_NAME}/rt.cpp
 )
-
+target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
