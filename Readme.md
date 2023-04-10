@@ -13,11 +13,8 @@ sudo chmod 777 /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
 sudo chmod 777 /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
 
 sudo echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-
 sudo echo performance > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-
 sudo echo performance > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
-
 sudo echo performance > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
 
 echo -1 >/proc/sys/kernel/sched_rt_runtime_us
