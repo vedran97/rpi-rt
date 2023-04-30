@@ -27,10 +27,10 @@ void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}{apply\+High\+Perf\+Mode\+To\+All\+C\+P\+Us}} () const
 \begin{DoxyCompactList}\small\item\em Changes power governance mode of C\+PU to high performance mode. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}{apply\+Scheduling\+Time\+Change}} () const
-\begin{DoxyCompactList}\small\item\em Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: This will basically allow a RT thread to run for infinite time. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: \href{https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt}{\texttt{ https\+://www.\+kernel.\+org/doc/\+Documentation/scheduler/sched-\/rt-\/group.\+txt}} This will basically allow a RT thread to run for infinite time. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}\label{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}} 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}{set\+C\+P\+U\+Dma\+Latency}} ()
-\begin{DoxyCompactList}\small\item\em Set C\+PU D\+MA Latency to 0, Find more information here\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set C\+PU D\+MA Latency to 0, Find more information here\+:https\+://access.redhat.\+com/articles/65410. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -67,11 +67,11 @@ Constructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}
 
 
 
-Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: This will basically allow a RT thread to run for infinite time. 
+Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: \href{https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt}{\texttt{ https\+://www.\+kernel.\+org/doc/\+Documentation/scheduler/sched-\/rt-\/group.\+txt}} This will basically allow a RT thread to run for infinite time. 
 
 
 \begin{DoxyExceptions}{Exceptions}
-{\em std\+::runtime\+\_\+error} & if the file /proc/sys/kernel/sched\+\_\+rt\+\_\+runtime\+\_\+us is not accessible, or if the write fails \href{https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt}{\texttt{ https\+://www.\+kernel.\+org/doc/\+Documentation/scheduler/sched-\/rt-\/group.\+txt}} \\
+{\em std\+::runtime\+\_\+error} & if the file /proc/sys/kernel/sched\+\_\+rt\+\_\+runtime\+\_\+us is not accessible, or if the write fails \\
 \hline
 \end{DoxyExceptions}
 

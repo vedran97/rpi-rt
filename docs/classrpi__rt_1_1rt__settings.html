@@ -101,11 +101,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:aad226b96850b47051aff477a3038a255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes power governance mode of CPU to high performance mode. <br /></td></tr>
 <tr class="separator:aad226b96850b47051aff477a3038a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb486fccbe992e089b74d4b69fad9956"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">applySchedulingTimeChange</a> () const</td></tr>
-<tr class="memdesc:adb486fccbe992e089b74d4b69fad9956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes sched_rt_runtime_us time to -1, Find more information here: This will basically allow a RT thread to run for infinite time.  <a href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">More...</a><br /></td></tr>
+<tr class="memdesc:adb486fccbe992e089b74d4b69fad9956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes sched_rt_runtime_us time to -1, Find more information here: <a href="https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt">https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt</a> This will basically allow a RT thread to run for infinite time.  <a href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">More...</a><br /></td></tr>
 <tr class="separator:adb486fccbe992e089b74d4b69fad9956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a789d33cda05c6b0b3767459a0a5d82ef"><td class="memItemLeft" align="right" valign="top"><a id="a789d33cda05c6b0b3767459a0a5d82ef"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">setCPUDmaLatency</a> ()</td></tr>
-<tr class="memdesc:a789d33cda05c6b0b3767459a0a5d82ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set CPU DMA Latency to 0, Find more information here: <br /></td></tr>
+<tr class="memdesc:a789d33cda05c6b0b3767459a0a5d82ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set CPU DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410. <br /></td></tr>
 <tr class="separator:a789d33cda05c6b0b3767459a0a5d82ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -179,10 +179,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Changes sched_rt_runtime_us time to -1, Find more information here: This will basically allow a RT thread to run for infinite time. </p>
+<p>Changes sched_rt_runtime_us time to -1, Find more information here: <a href="https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt">https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt</a> This will basically allow a RT thread to run for infinite time. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">std::runtime_error</td><td>if the file /proc/sys/kernel/sched_rt_runtime_us is not accessible, or if the write fails <a href="https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt">https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt</a> </td></tr>
+    <tr><td class="paramname">std::runtime_error</td><td>if the file /proc/sys/kernel/sched_rt_runtime_us is not accessible, or if the write fails </td></tr>
   </table>
   </dd>
 </dl>
