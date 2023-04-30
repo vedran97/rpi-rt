@@ -48,15 +48,13 @@ public:
     void applyHighPerfModeToAllCPUs()const;
 
     /**
-     * @brief Changes sched_rt_runtime_us time to -1, Find more information here:
+     * @brief Changes sched_rt_runtime_us time to -1, Find more information here: https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt
      * This will basically allow a RT thread to run for infinite time
      * @throws std::runtime_error if the file /proc/sys/kernel/sched_rt_runtime_us is not accessible, or if the write fails
-     * https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt
      */
     void applySchedulingTimeChange()const;
 
-    /// @brief Set CPU  DMA Latency to 0, Find more information here:
-    // https://access.redhat.com/articles/65410
+    /// @brief Set CPU  DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410
     void setCPUDmaLatency();
 
     ~rt_settings();
