@@ -3,6 +3,8 @@
 
 #include  <stddef.h>
 #include  <assert.h>
+#include <fstream>
+
 namespace rpi_rt{
 enum class CPUS:size_t{
 CPU1,
@@ -10,6 +12,7 @@ CPU2,
 CPU3,
 CPU4
 };
+/// @brief This settings class has all the settings that are required to be applied to a thread to make it a RT thread on Raspberry Pi 4
 class rt_settings
 {
 private:
@@ -17,7 +20,13 @@ private:
     const CPUS affCPU;
     const int priority;
     const int memoryToBeLocked;
+    std::ofstream dma_latency;
 public:
+
+    /// @brief Constructor for rt_settings
+    /// @param affCPUs CPU Core to which the calling thread needs to be pinned
+    /// @param priority Thread priority to be assigned to a caller thread
+    /// @param memoryToBeLocked Amount of memory to be locked for the caller thread in bytes
     rt_settings(CPUS affCPUs,int priority,int memoryToBeLocked)
     :affCPU(affCPUs),
     priority(priority),
@@ -36,10 +45,21 @@ public:
     void applyMemoryLock()const;
 
     /// @brief Changes power governance mode of CPU to high performance mode
-    void applyHighPerformancemode()const;
+    void applyHighPerfModeToAllCPUs()const;
 
-    /// @brief Changes RT_SCHED time to -1
+    /**
+     * @brief Changes sched_rt_runtime_us time to -1, Find more information here:
+     * This will basically allow a RT thread to run for infinite time
+     * @throws std::runtime_error if the file /proc/sys/kernel/sched_rt_runtime_us is not accessible, or if the write fails
+     * https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt
+     */
     void applySchedulingTimeChange()const;
+
+    /// @brief Set CPU  DMA Latency to 0, Find more information here:
+    // https://access.redhat.com/articles/65410
+    void setCPUDmaLatency();
+
+    ~rt_settings();
 };
 
 };

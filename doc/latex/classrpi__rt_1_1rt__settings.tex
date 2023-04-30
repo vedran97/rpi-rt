@@ -1,0 +1,81 @@
+\hypertarget{classrpi__rt_1_1rt__settings}{}\doxysection{rpi\+\_\+rt\+::rt\+\_\+settings Class Reference}
+\label{classrpi__rt_1_1rt__settings}\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+
+
+This settings class has all the settings that are required to be applied to a thread to make it a RT thread on Raspberry Pi 4.  
+
+
+
+
+{\ttfamily \#include $<$rt.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}{rt\+\_\+settings}} (C\+P\+US aff\+C\+P\+Us, int priority, int memory\+To\+Be\+Locked)
+\begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}\label{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}} 
+void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}{apply\+Affinity}} () const
+\begin{DoxyCompactList}\small\item\em Pins the calling thread to a C\+PU Core mentioned in the constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}\label{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}} 
+void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}{apply\+Priority}} () const
+\begin{DoxyCompactList}\small\item\em Applies specified thread priority to the calling thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}\label{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}} 
+void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}{apply\+Memory\+Lock}} () const
+\begin{DoxyCompactList}\small\item\em Allocates and locks memory for the caller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}\label{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}} 
+void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}{apply\+High\+Perf\+Mode\+To\+All\+C\+P\+Us}} () const
+\begin{DoxyCompactList}\small\item\em Changes power governance mode of C\+PU to high performance mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}{apply\+Scheduling\+Time\+Change}} () const
+\begin{DoxyCompactList}\small\item\em Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: This will basically allow a RT thread to run for infinite time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}\label{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}} 
+void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}{set\+C\+P\+U\+Dma\+Latency}} ()
+\begin{DoxyCompactList}\small\item\em Set C\+PU D\+MA Latency to 0, Find more information here\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This settings class has all the settings that are required to be applied to a thread to make it a RT thread on Raspberry Pi 4. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}\label{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!rt\_settings@{rt\_settings}}
+\index{rt\_settings@{rt\_settings}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{rt\_settings()}{rt\_settings()}}
+{\footnotesize\ttfamily rpi\+\_\+rt\+::rt\+\_\+settings\+::rt\+\_\+settings (\begin{DoxyParamCaption}\item[{C\+P\+US}]{aff\+C\+P\+Us,  }\item[{int}]{priority,  }\item[{int}]{memory\+To\+Be\+Locked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aff\+C\+P\+Us} & C\+PU Core to which the calling thread needs to be pinned \\
+\hline
+{\em priority} & Thread priority to be assigned to a caller thread \\
+\hline
+{\em memory\+To\+Be\+Locked} & Amount of memory to be locked for the caller thread in bytes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}\label{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!applySchedulingTimeChange@{applySchedulingTimeChange}}
+\index{applySchedulingTimeChange@{applySchedulingTimeChange}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{applySchedulingTimeChange()}{applySchedulingTimeChange()}}
+{\footnotesize\ttfamily void rpi\+\_\+rt\+::rt\+\_\+settings\+::apply\+Scheduling\+Time\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: This will basically allow a RT thread to run for infinite time. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the file /proc/sys/kernel/sched\+\_\+rt\+\_\+runtime\+\_\+us is not accessible, or if the write fails \href{https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt}{\texttt{ https\+://www.\+kernel.\+org/doc/\+Documentation/scheduler/sched-\/rt-\/group.\+txt}} \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/rpi-\/rt/rt.\+hpp\end{DoxyCompactItemize}

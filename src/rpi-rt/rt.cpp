@@ -37,12 +37,51 @@ void rt_settings::applyMemoryLock() const {
 
 }
 
-void rt_settings::applyHighPerformancemode() const {
-
+void rt_settings::applyHighPerfModeToAllCPUs() const {
+    // Set CPU governor to "performance"
+    for (int i = 0; i < 4; i++) {
+        std::ofstream cpuGovFile("/sys/devices/system/cpu/cpu" + std::to_string(i) + "/cpufreq/scaling_governor");
+        if (!cpuGovFile.is_open()) {
+            throw getError("Failed to open /sys/devices/system/cpu/cpu" + std::to_string(i) + "/cpufreq/scaling_governor",0);
+        }
+        cpuGovFile << "performance";
+        if(cpuGovFile.bad()){
+            throw getError("Failed to write performance to /sys/devices/system/cpu/cpu" + std::to_string(i) + "/cpufreq/scaling_governor",0);
+        }
+        cpuGovFile.close();
+    }
 }
 
 void rt_settings::applySchedulingTimeChange() const {
 
+    std::ofstream rt_runtime("/proc/sys/kernel/sched_rt_runtime_us",std::ios::out);
+
+    if (!rt_runtime.is_open()) {
+        throw getError("Failed to open /proc/sys/kernel/sched_rt_runtime_us",0);
+    }
+    //TODO@VR: Add a way to configure this parameter
+    rt_runtime << "-1";
+    if (rt_runtime.bad()) {
+        throw getError("Failed to write /proc/sys/kernel/sched_rt_runtime_us",0);
+    }
+
+    rt_runtime.close();
+    return;
 }
 
+void rt_settings::setCPUDmaLatency() {
+    dma_latency.open("/dev/cpu_dma_latency", std::ios::out);
+    if (!dma_latency.is_open()) {
+        throw getError("Failed to Open /proc/sys/kernel/sched_rt_runtime_us",0);
+    }
+    dma_latency << "0";
+    if (dma_latency.bad()) {
+        throw getError("Failed to write 0 to /dev/cpu_dma_latency",0);
+    }
 }
+
+rt_settings::~rt_settings() {
+    dma_latency.close();
+}
+
+}// namespace rpi_rt
