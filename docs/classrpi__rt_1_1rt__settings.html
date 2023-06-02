@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rpi-rt
-   &#160;<span id="projectnumber">0.1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
+   <div id="projectbrief">This project covers methods to extract RT functionality from a RPi</div>
   </td>
  </tr>
  </tbody>
@@ -62,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>rpi_rt</b></li><li class="navelem"><a class="el" href="classrpi__rt_1_1rt__settings.html">rt_settings</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacerpi__rt.html">rpi_rt</a></li><li class="navelem"><a class="el" href="classrpi__rt_1_1rt__settings.html">rt_settings</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -78,38 +79,48 @@ $(function() {
  <a href="classrpi__rt_1_1rt__settings.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="rt_8hpp_source.html">rt.hpp</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Collaboration diagram for rpi_rt::rt_settings:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="classrpi__rt_1_1rt__settings__coll__graph.png" border="0" usemap="#rpi__rt_1_1rt__settings_coll__map" alt="Collaboration graph"/></div>
+<map name="rpi__rt_1_1rt__settings_coll__map" id="rpi__rt_1_1rt__settings_coll__map">
+<area shape="rect" title="This settings class has all the settings that are required to be applied to a thread to make it a RT ..." alt="" coords="5,5,245,185"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a60efc5bdc3862909e11ae1c4f74262c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">rt_settings</a> (CPUS affCPUs, int priority, int memoryToBeLocked)</td></tr>
+<tr class="memitem:a60efc5bdc3862909e11ae1c4f74262c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">rt_settings</a> (<a class="el" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">CPUS</a> affCPUs, int priority, int memoryToBeLocked)</td></tr>
 <tr class="memdesc:a60efc5bdc3862909e11ae1c4f74262c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classrpi__rt_1_1rt__settings.html" title="This settings class has all the settings that are required to be applied to a thread to make it a RT ...">rt_settings</a>.  <a href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">More...</a><br /></td></tr>
 <tr class="separator:a60efc5bdc3862909e11ae1c4f74262c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e441df45fe9eb75a597b1dce1609359"><td class="memItemLeft" align="right" valign="top"><a id="a9e441df45fe9eb75a597b1dce1609359"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a9e441df45fe9eb75a597b1dce1609359">applyAffinity</a> () const</td></tr>
-<tr class="memdesc:a9e441df45fe9eb75a597b1dce1609359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pins the calling thread to a CPU Core mentioned in the constructor. <br /></td></tr>
+<tr class="memitem:a9e441df45fe9eb75a597b1dce1609359"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a9e441df45fe9eb75a597b1dce1609359">applyAffinity</a> () const</td></tr>
+<tr class="memdesc:a9e441df45fe9eb75a597b1dce1609359"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pins the calling thread to a CPU Core mentioned in the constructor.  <a href="classrpi__rt_1_1rt__settings.html#a9e441df45fe9eb75a597b1dce1609359">More...</a><br /></td></tr>
 <tr class="separator:a9e441df45fe9eb75a597b1dce1609359"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c995e173e0141431d1efa8b677fc89"><td class="memItemLeft" align="right" valign="top"><a id="a47c995e173e0141431d1efa8b677fc89"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a47c995e173e0141431d1efa8b677fc89">applyPriority</a> () const</td></tr>
-<tr class="memdesc:a47c995e173e0141431d1efa8b677fc89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies specified thread priority to the calling thread. <br /></td></tr>
+<tr class="memitem:a47c995e173e0141431d1efa8b677fc89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a47c995e173e0141431d1efa8b677fc89">applyPriority</a> () const</td></tr>
+<tr class="memdesc:a47c995e173e0141431d1efa8b677fc89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies specified thread priority to the calling thread.  <a href="classrpi__rt_1_1rt__settings.html#a47c995e173e0141431d1efa8b677fc89">More...</a><br /></td></tr>
 <tr class="separator:a47c995e173e0141431d1efa8b677fc89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5be4072767fe6639b4e60e2f218052d"><td class="memItemLeft" align="right" valign="top"><a id="ad5be4072767fe6639b4e60e2f218052d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#ad5be4072767fe6639b4e60e2f218052d">applyMemoryLock</a> () const</td></tr>
-<tr class="memdesc:ad5be4072767fe6639b4e60e2f218052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and locks memory for the caller. <br /></td></tr>
+<tr class="memitem:ad5be4072767fe6639b4e60e2f218052d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#ad5be4072767fe6639b4e60e2f218052d">applyMemoryLock</a> () const</td></tr>
+<tr class="memdesc:ad5be4072767fe6639b4e60e2f218052d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and locks memory for the caller.  <a href="classrpi__rt_1_1rt__settings.html#ad5be4072767fe6639b4e60e2f218052d">More...</a><br /></td></tr>
 <tr class="separator:ad5be4072767fe6639b4e60e2f218052d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad226b96850b47051aff477a3038a255"><td class="memItemLeft" align="right" valign="top"><a id="aad226b96850b47051aff477a3038a255"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#aad226b96850b47051aff477a3038a255">applyHighPerfModeToAllCPUs</a> () const</td></tr>
-<tr class="memdesc:aad226b96850b47051aff477a3038a255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes power governance mode of CPU to high performance mode. <br /></td></tr>
+<tr class="memitem:aad226b96850b47051aff477a3038a255"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#aad226b96850b47051aff477a3038a255">applyHighPerfModeToAllCPUs</a> () const</td></tr>
+<tr class="memdesc:aad226b96850b47051aff477a3038a255"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes power governance mode of CPU to high performance mode.  <a href="classrpi__rt_1_1rt__settings.html#aad226b96850b47051aff477a3038a255">More...</a><br /></td></tr>
 <tr class="separator:aad226b96850b47051aff477a3038a255"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb486fccbe992e089b74d4b69fad9956"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">applySchedulingTimeChange</a> () const</td></tr>
 <tr class="memdesc:adb486fccbe992e089b74d4b69fad9956"><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes sched_rt_runtime_us time to -1, Find more information here: <a href="https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt">https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt</a> This will basically allow a RT thread to run for infinite time.  <a href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">More...</a><br /></td></tr>
 <tr class="separator:adb486fccbe992e089b74d4b69fad9956"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a789d33cda05c6b0b3767459a0a5d82ef"><td class="memItemLeft" align="right" valign="top"><a id="a789d33cda05c6b0b3767459a0a5d82ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">setCPUDmaLatency</a> ()</td></tr>
-<tr class="memdesc:a789d33cda05c6b0b3767459a0a5d82ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set CPU DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410. <br /></td></tr>
+<tr class="memitem:a789d33cda05c6b0b3767459a0a5d82ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">setCPUDmaLatency</a> ()</td></tr>
+<tr class="memdesc:a789d33cda05c6b0b3767459a0a5d82ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set CPU DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410.  <a href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">More...</a><br /></td></tr>
 <tr class="separator:a789d33cda05c6b0b3767459a0a5d82ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad13842d836a61742de25b579eb15a840"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrpi__rt_1_1rt__settings.html#ad13842d836a61742de25b579eb15a840">~rt_settings</a> ()</td></tr>
+<tr class="memdesc:ad13842d836a61742de25b579eb15a840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classrpi__rt_1_1rt__settings.html" title="This settings class has all the settings that are required to be applied to a thread to make it a RT ...">rt_settings</a>.  <a href="classrpi__rt_1_1rt__settings.html#ad13842d836a61742de25b579eb15a840">More...</a><br /></td></tr>
+<tr class="separator:ad13842d836a61742de25b579eb15a840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This settings class has all the settings that are required to be applied to a thread to make it a RT thread on Raspberry Pi 4. </p>
+
+<p class="definition">Definition at line <a class="el" href="rt_8hpp_source.html#l00017">17</a> of file <a class="el" href="rt_8hpp_source.html">rt.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a60efc5bdc3862909e11ae1c4f74262c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60efc5bdc3862909e11ae1c4f74262c8">&#9670;&nbsp;</a></span>rt_settings()</h2>
@@ -123,7 +134,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">rpi_rt::rt_settings::rt_settings </td>
           <td>(</td>
-          <td class="paramtype">CPUS&#160;</td>
+          <td class="paramtype"><a class="el" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">CPUS</a>&#160;</td>
           <td class="paramname"><em>affCPUs</em>, </td>
         </tr>
         <tr>
@@ -161,9 +172,134 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="rt_8hpp_source.html#l00031">31</a> of file <a class="el" href="rt_8hpp_source.html">rt.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ad13842d836a61742de25b579eb15a840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad13842d836a61742de25b579eb15a840">&#9670;&nbsp;</a></span>~rt_settings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual rpi_rt::rt_settings::~rt_settings </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destructor for <a class="el" href="classrpi__rt_1_1rt__settings.html" title="This settings class has all the settings that are required to be applied to a thread to make it a RT ...">rt_settings</a>. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9e441df45fe9eb75a597b1dce1609359"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e441df45fe9eb75a597b1dce1609359">&#9670;&nbsp;</a></span>applyAffinity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpi_rt::rt_settings::applyAffinity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pins the calling thread to a CPU Core mentioned in the constructor. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the function fails to attach affinity </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aad226b96850b47051aff477a3038a255"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad226b96850b47051aff477a3038a255">&#9670;&nbsp;</a></span>applyHighPerfModeToAllCPUs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpi_rt::rt_settings::applyHighPerfModeToAllCPUs </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Changes power governance mode of CPU to high performance mode. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is not tested yet </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the program fails to apply high performance mode </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad5be4072767fe6639b4e60e2f218052d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5be4072767fe6639b4e60e2f218052d">&#9670;&nbsp;</a></span>applyMemoryLock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpi_rt::rt_settings::applyMemoryLock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allocates and locks memory for the caller. </p>
+<dl class="section note"><dt>Note</dt><dd>This function is not implemented yet </dd></dl>
+
+</div>
+</div>
+<a id="a47c995e173e0141431d1efa8b677fc89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47c995e173e0141431d1efa8b677fc89">&#9670;&nbsp;</a></span>applyPriority()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpi_rt::rt_settings::applyPriority </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies specified thread priority to the calling thread. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the thread priority fails to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adb486fccbe992e089b74d4b69fad9956"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb486fccbe992e089b74d4b69fad9956">&#9670;&nbsp;</a></span>applySchedulingTimeChange()</h2>
 
@@ -183,6 +319,31 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">std::runtime_error</td><td>if the file /proc/sys/kernel/sched_rt_runtime_us is not accessible, or if the write fails </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a789d33cda05c6b0b3767459a0a5d82ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789d33cda05c6b0b3767459a0a5d82ef">&#9670;&nbsp;</a></span>setCPUDmaLatency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rpi_rt::rt_settings::setCPUDmaLatency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set CPU DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the method fails to set CPU DMA Latency </td></tr>
   </table>
   </dd>
 </dl>

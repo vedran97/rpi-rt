@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['rt_5fsettings_5',['rt_settings',['../classrpi__rt_1_1rt__settings.html',1,'rpi_rt::rt_settings'],['../classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8',1,'rpi_rt::rt_settings::rt_settings()']]]
+  ['cpu1_5',['CPU1',['../namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6ada75a2d99d7d4b9cee614d9cb8ea09ce',1,'rpi_rt']]],
+  ['cpu2_6',['CPU2',['../namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6a3b2ea18cad74ee37c96bd34c5f39cd7d',1,'rpi_rt']]],
+  ['cpu3_7',['CPU3',['../namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6ab58a84c4f38a136407ae3ca229eb3e22',1,'rpi_rt']]],
+  ['cpu4_8',['CPU4',['../namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6aeba584ce84f801a00ec090b1a0bcd7ee',1,'rpi_rt']]],
+  ['cpus_9',['CPUS',['../namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6',1,'rpi_rt']]]
 ];

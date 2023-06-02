@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rpi-rt
-   &#160;<span id="projectnumber">0.1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
+   <div id="projectbrief">This project covers methods to extract RT functionality from a RPi</div>
   </td>
  </tr>
  </tbody>
@@ -70,64 +71,71 @@ $(function() {
 <div class="title">rt.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RPI_RT_H_</span></div>
+<a href="rt_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RPI_RT_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define RPI_RT_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include  &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include  &lt;assert.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>rpi_rt{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">enum class</span> CPUS:size_t{</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;CPU1,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;CPU2,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;CPU3,</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;CPU4</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classrpi__rt_1_1rt__settings.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrpi__rt_1_1rt__settings.html">rt_settings</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/* data */</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> CPUS affCPU;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> priority;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> memoryToBeLocked;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    std::ofstream dma_latency;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">   30</a></span>&#160;    <a class="code" href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">rt_settings</a>(CPUS affCPUs,<span class="keywordtype">int</span> priority,<span class="keywordtype">int</span> memoryToBeLocked)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    :affCPU(affCPUs),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    priority(priority),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    memoryToBeLocked(memoryToBeLocked)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        assert((this-&gt;priority)&gt;0);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        assert((this-&gt;memoryToBeLocked)&gt;0);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#a9e441df45fe9eb75a597b1dce1609359">applyAffinity</a>()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#a47c995e173e0141431d1efa8b677fc89">applyPriority</a>()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#ad5be4072767fe6639b4e60e2f218052d">applyMemoryLock</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacerpi__rt.html">    8</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerpi__rt.html">rpi_rt</a>{</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">   10</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">CPUS</a>:size_t{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6ada75a2d99d7d4b9cee614d9cb8ea09ce">CPU1</a>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6a3b2ea18cad74ee37c96bd34c5f39cd7d">CPU2</a>,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6ab58a84c4f38a136407ae3ca229eb3e22">CPU3</a>,</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6aeba584ce84f801a00ec090b1a0bcd7ee">CPU4</a></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classrpi__rt_1_1rt__settings.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrpi__rt_1_1rt__settings.html">rt_settings</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/* data */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">const</span> <a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">CPUS</a> affCPU;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> priority;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> memoryToBeLocked;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::ofstream dma_latency;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">   31</a></span>&#160;    <a class="code" href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">rt_settings</a>(<a class="code" href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">CPUS</a> affCPUs,<span class="keywordtype">int</span> priority,<span class="keywordtype">int</span> memoryToBeLocked)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    :affCPU(affCPUs),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    priority(priority),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    memoryToBeLocked(memoryToBeLocked)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        assert((this-&gt;priority)&gt;0);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        assert((this-&gt;memoryToBeLocked)&gt;0);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#a9e441df45fe9eb75a597b1dce1609359">applyAffinity</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#a47c995e173e0141431d1efa8b677fc89">applyPriority</a>()<span class="keyword">const</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#aad226b96850b47051aff477a3038a255">applyHighPerfModeToAllCPUs</a>()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">applySchedulingTimeChange</a>()<span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">setCPUDmaLatency</a>();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    ~<a class="code" href="classrpi__rt_1_1rt__settings.html">rt_settings</a>();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif // RPI_RT_H_</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#ad5be4072767fe6639b4e60e2f218052d">applyMemoryLock</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#aad226b96850b47051aff477a3038a255">applyHighPerfModeToAllCPUs</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">applySchedulingTimeChange</a>()<span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">setCPUDmaLatency</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classrpi__rt_1_1rt__settings.html#ad13842d836a61742de25b579eb15a840">~rt_settings</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif // RPI_RT_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_ad13842d836a61742de25b579eb15a840"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#ad13842d836a61742de25b579eb15a840">rpi_rt::rt_settings::~rt_settings</a></div><div class="ttdeci">virtual ~rt_settings()</div><div class="ttdoc">Destructor for rt_settings.</div></div>
+<div class="ttc" id="anamespacerpi__rt_html_a5db7fedfdfffaeb63c097c11de64ffd6ada75a2d99d7d4b9cee614d9cb8ea09ce"><div class="ttname"><a href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6ada75a2d99d7d4b9cee614d9cb8ea09ce">rpi_rt::CPUS::CPU1</a></div><div class="ttdeci">@ CPU1</div></div>
 <div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_a47c995e173e0141431d1efa8b677fc89"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#a47c995e173e0141431d1efa8b677fc89">rpi_rt::rt_settings::applyPriority</a></div><div class="ttdeci">void applyPriority() const</div><div class="ttdoc">Applies specified thread priority to the calling thread.</div></div>
 <div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_ad5be4072767fe6639b4e60e2f218052d"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#ad5be4072767fe6639b4e60e2f218052d">rpi_rt::rt_settings::applyMemoryLock</a></div><div class="ttdeci">void applyMemoryLock() const</div><div class="ttdoc">Allocates and locks memory for the caller.</div></div>
 <div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_a9e441df45fe9eb75a597b1dce1609359"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#a9e441df45fe9eb75a597b1dce1609359">rpi_rt::rt_settings::applyAffinity</a></div><div class="ttdeci">void applyAffinity() const</div><div class="ttdoc">Pins the calling thread to a CPU Core mentioned in the constructor.</div></div>
+<div class="ttc" id="anamespacerpi__rt_html_a5db7fedfdfffaeb63c097c11de64ffd6ab58a84c4f38a136407ae3ca229eb3e22"><div class="ttname"><a href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6ab58a84c4f38a136407ae3ca229eb3e22">rpi_rt::CPUS::CPU3</a></div><div class="ttdeci">@ CPU3</div></div>
 <div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_a789d33cda05c6b0b3767459a0a5d82ef"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#a789d33cda05c6b0b3767459a0a5d82ef">rpi_rt::rt_settings::setCPUDmaLatency</a></div><div class="ttdeci">void setCPUDmaLatency()</div><div class="ttdoc">Set CPU DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410.</div></div>
 <div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_aad226b96850b47051aff477a3038a255"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#aad226b96850b47051aff477a3038a255">rpi_rt::rt_settings::applyHighPerfModeToAllCPUs</a></div><div class="ttdeci">void applyHighPerfModeToAllCPUs() const</div><div class="ttdoc">Changes power governance mode of CPU to high performance mode.</div></div>
-<div class="ttc" id="aclassrpi__rt_1_1rt__settings_html"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html">rpi_rt::rt_settings</a></div><div class="ttdoc">This settings class has all the settings that are required to be applied to a thread to make it a RT ...</div><div class="ttdef"><b>Definition:</b> rt.hpp:16</div></div>
-<div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_a60efc5bdc3862909e11ae1c4f74262c8"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">rpi_rt::rt_settings::rt_settings</a></div><div class="ttdeci">rt_settings(CPUS affCPUs, int priority, int memoryToBeLocked)</div><div class="ttdoc">Constructor for rt_settings.</div><div class="ttdef"><b>Definition:</b> rt.hpp:30</div></div>
+<div class="ttc" id="anamespacerpi__rt_html_a5db7fedfdfffaeb63c097c11de64ffd6"><div class="ttname"><a href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6">rpi_rt::CPUS</a></div><div class="ttdeci">CPUS</div><div class="ttdoc">Enum class to represent CPU Cores.</div><div class="ttdef"><b>Definition:</b> <a href="rt_8hpp_source.html#l00010">rt.hpp:10</a></div></div>
+<div class="ttc" id="anamespacerpi__rt_html"><div class="ttname"><a href="namespacerpi__rt.html">rpi_rt</a></div><div class="ttdef"><b>Definition:</b> <a href="rt_8hpp_source.html#l00008">rt.hpp:8</a></div></div>
+<div class="ttc" id="aclassrpi__rt_1_1rt__settings_html"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html">rpi_rt::rt_settings</a></div><div class="ttdoc">This settings class has all the settings that are required to be applied to a thread to make it a RT ...</div><div class="ttdef"><b>Definition:</b> <a href="rt_8hpp_source.html#l00017">rt.hpp:17</a></div></div>
+<div class="ttc" id="anamespacerpi__rt_html_a5db7fedfdfffaeb63c097c11de64ffd6aeba584ce84f801a00ec090b1a0bcd7ee"><div class="ttname"><a href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6aeba584ce84f801a00ec090b1a0bcd7ee">rpi_rt::CPUS::CPU4</a></div><div class="ttdeci">@ CPU4</div></div>
+<div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_a60efc5bdc3862909e11ae1c4f74262c8"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#a60efc5bdc3862909e11ae1c4f74262c8">rpi_rt::rt_settings::rt_settings</a></div><div class="ttdeci">rt_settings(CPUS affCPUs, int priority, int memoryToBeLocked)</div><div class="ttdoc">Constructor for rt_settings.</div><div class="ttdef"><b>Definition:</b> <a href="rt_8hpp_source.html#l00031">rt.hpp:31</a></div></div>
 <div class="ttc" id="aclassrpi__rt_1_1rt__settings_html_adb486fccbe992e089b74d4b69fad9956"><div class="ttname"><a href="classrpi__rt_1_1rt__settings.html#adb486fccbe992e089b74d4b69fad9956">rpi_rt::rt_settings::applySchedulingTimeChange</a></div><div class="ttdeci">void applySchedulingTimeChange() const</div><div class="ttdoc">Changes sched_rt_runtime_us time to -1, Find more information here: https://www.kernel....</div></div>
+<div class="ttc" id="anamespacerpi__rt_html_a5db7fedfdfffaeb63c097c11de64ffd6a3b2ea18cad74ee37c96bd34c5f39cd7d"><div class="ttname"><a href="namespacerpi__rt.html#a5db7fedfdfffaeb63c097c11de64ffd6a3b2ea18cad74ee37c96bd34c5f39cd7d">rpi_rt::CPUS::CPU2</a></div><div class="ttdeci">@ CPU2</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

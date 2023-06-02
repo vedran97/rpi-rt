@@ -1,0 +1,3 @@
+<map id="rpi_rt::rt_settings" name="rpi_rt::rt_settings">
+<area shape="rect" id="node1" title="This settings class has all the settings that are required to be applied to a thread to make it a RT ..." alt="" coords="5,5,245,185"/>
+</map>

@@ -1,0 +1,25 @@
+
+\begin{DoxyEnumerate}
+\item It has Real time settings which one can apply in a thread,to extract max performance from an R\+PI.
+\item With Great power,comes great responsibility
+\item R\+OS Noetic is used as a packaging and build system for it.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md1}{}\doxysection{Requirements\+:}\label{index_autotoc_md1}
+0. Please Ensure you have the R\+PI patched with a P\+R\+E\+E\+M\+P\+T\+\_\+\+RT patch, otherwise you wouldnt be able to apply a RT priority to S\+C\+H\+E\+D\+\_\+\+F\+I\+FO
+\begin{DoxyEnumerate}
+\item For using this library, your user will need to have root permissions.
+\item Secondly, to set RT priorities, please set ulimit configs in the following way\+:
+\begin{DoxyEnumerate}
+\item Add your user to a group, in this example, called \char`\"{}rtprio\char`\"{}
+\item Give this group root permissions\+:~\newline
+ {\ttfamily sudo groupadd rtprio} ~\newline
+ {\ttfamily sudo usermod -\/a -\/G rtprio $<$username$>$}~\newline
+ {\ttfamily sudo chmod 4750 /usr/bin/chrt} ~\newline
+
+\item Now you have to configure hard and soft priority limits which the group can use\+:
+\item Open /etc/security/limits.conf in an editor of your choice and add the following lines\+:~\newline
+ {\ttfamily $<$username$>$ hard rtprio 99} ~\newline
+ {\ttfamily $<$username$>$ soft rtprio 99}
+\item Reference for the above\+: \href{https://stackoverflow.com/questions/10704983/operation-not-permitted-while-setting-new-priority-for-thread}{\texttt{ https\+://stackoverflow.\+com/questions/10704983/operation-\/not-\/permitted-\/while-\/setting-\/new-\/priority-\/for-\/thread}}
+\item One way to programatically change soft and hard limit \+: \href{https://man7.org/linux/man-pages/man2/getrlimit.2.html}{\texttt{ https\+://man7.\+org/linux/man-\/pages/man2/getrlimit.\+2.\+html}} 
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}

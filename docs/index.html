@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>rpi-rt: Main Page</title>
+<title>rpi-rt: This library has been written for RPI-Model 4B, running a Ubuntu 20.04 Server</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">rpi-rt
-   &#160;<span id="projectnumber">0.1.0</span>
+   &#160;<span id="projectnumber">1.0.0</span>
    </div>
+   <div id="projectbrief">This project covers methods to extract RT functionality from a RPi</div>
   </td>
  </tr>
  </tbody>
@@ -61,11 +62,37 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">rpi-rt Documentation</div>  </div>
+<div class="title">This library has been written for RPI-Model 4B, running a Ubuntu 20.04 Server </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><ol type="1">
+<li>It has Real time settings which one can apply in a thread,to extract max performance from an RPI.</li>
+<li>With Great power,comes great responsibility</li>
+<li>ROS Noetic is used as a packaging and build system for it.</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Requirements:</h1>
+<p>0. Please Ensure you have the RPI patched with a PREEMPT_RT patch, otherwise you wouldnt be able to apply a RT priority to SCHED_FIFO</p><ol type="1">
+<li>For using this library, your user will need to have root permissions.</li>
+<li>Secondly, to set RT priorities, please set ulimit configs in the following way:<ol type="a">
+<li>Add your user to a group, in this example, called "rtprio"</li>
+<li>Give this group root permissions:<br  />
+ <code>sudo groupadd rtprio</code> <br  />
+ <code>sudo usermod -a -G rtprio &lt;username&gt;</code><br  />
+ <code>sudo chmod 4750 /usr/bin/chrt</code> <br  />
+</li>
+<li>Now you have to configure hard and soft priority limits which the group can use:</li>
+<li>Open /etc/security/limits.conf in an editor of your choice and add the following lines:<br  />
+ <code>&lt;username&gt; hard rtprio 99</code> <br  />
+ <code>&lt;username&gt; soft rtprio 99</code></li>
+<li>Reference for the above: <a href="https://stackoverflow.com/questions/10704983/operation-not-permitted-while-setting-new-priority-for-thread">https://stackoverflow.com/questions/10704983/operation-not-permitted-while-setting-new-priority-for-thread</a></li>
+<li>One way to programatically change soft and hard limit : <a href="https://man7.org/linux/man-pages/man2/getrlimit.2.html">https://man7.org/linux/man-pages/man2/getrlimit.2.html</a> </li>
+</ol>
+</li>
+</ol>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

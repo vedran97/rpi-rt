@@ -9,39 +9,50 @@ This settings class has all the settings that are required to be applied to a th
 
 {\ttfamily \#include $<$rt.\+hpp$>$}
 
+
+
+Collaboration diagram for rpi\+\_\+rt\+::rt\+\_\+settings\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classrpi__rt_1_1rt__settings__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}{rt\+\_\+settings}} (C\+P\+US aff\+C\+P\+Us, int priority, int memory\+To\+Be\+Locked)
+\mbox{\hyperlink{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}{rt\+\_\+settings}} (\mbox{\hyperlink{namespacerpi__rt_a5db7fedfdfffaeb63c097c11de64ffd6}{C\+P\+US}} aff\+C\+P\+Us, int priority, int memory\+To\+Be\+Locked)
 \begin{DoxyCompactList}\small\item\em Constructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}}. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}\label{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}} 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}{apply\+Affinity}} () const
 \begin{DoxyCompactList}\small\item\em Pins the calling thread to a C\+PU Core mentioned in the constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}\label{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}} 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}{apply\+Priority}} () const
 \begin{DoxyCompactList}\small\item\em Applies specified thread priority to the calling thread. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}\label{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}} 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}{apply\+Memory\+Lock}} () const
 \begin{DoxyCompactList}\small\item\em Allocates and locks memory for the caller. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}\label{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}} 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}{apply\+High\+Perf\+Mode\+To\+All\+C\+P\+Us}} () const
 \begin{DoxyCompactList}\small\item\em Changes power governance mode of C\+PU to high performance mode. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}{apply\+Scheduling\+Time\+Change}} () const
 \begin{DoxyCompactList}\small\item\em Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information here\+: \href{https://www.kernel.org/doc/Documentation/scheduler/sched-rt-group.txt}{\texttt{ https\+://www.\+kernel.\+org/doc/\+Documentation/scheduler/sched-\/rt-\/group.\+txt}} This will basically allow a RT thread to run for infinite time. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}\label{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}} 
 void \mbox{\hyperlink{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}{set\+C\+P\+U\+Dma\+Latency}} ()
-\begin{DoxyCompactList}\small\item\em Set C\+PU D\+MA Latency to 0, Find more information here\+:https\+://access.redhat.\+com/articles/65410. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set C\+PU D\+MA Latency to 0, Find more information here\+:https\+://access.redhat.\+com/articles/65410. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classrpi__rt_1_1rt__settings_ad13842d836a61742de25b579eb15a840}{$\sim$rt\+\_\+settings}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 This settings class has all the settings that are required to be applied to a thread to make it a RT thread on Raspberry Pi 4. 
+
+Definition at line 17 of file rt.\+hpp.
+
+
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}\label{classrpi__rt_1_1rt__settings_a60efc5bdc3862909e11ae1c4f74262c8}} 
 \index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!rt\_settings@{rt\_settings}}
 \index{rt\_settings@{rt\_settings}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
 \doxysubsubsection{\texorpdfstring{rt\_settings()}{rt\_settings()}}
-{\footnotesize\ttfamily rpi\+\_\+rt\+::rt\+\_\+settings\+::rt\+\_\+settings (\begin{DoxyParamCaption}\item[{C\+P\+US}]{aff\+C\+P\+Us,  }\item[{int}]{priority,  }\item[{int}]{memory\+To\+Be\+Locked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily rpi\+\_\+rt\+::rt\+\_\+settings\+::rt\+\_\+settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacerpi__rt_a5db7fedfdfffaeb63c097c11de64ffd6}{C\+P\+US}}}]{aff\+C\+P\+Us,  }\item[{int}]{priority,  }\item[{int}]{memory\+To\+Be\+Locked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -58,7 +69,82 @@ Constructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}
 \end{DoxyParams}
 
 
+Definition at line 31 of file rt.\+hpp.
+
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_ad13842d836a61742de25b579eb15a840}\label{classrpi__rt_1_1rt__settings_ad13842d836a61742de25b579eb15a840}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!````~rt\_settings@{$\sim$rt\_settings}}
+\index{````~rt\_settings@{$\sim$rt\_settings}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{$\sim$rt\_settings()}{~rt\_settings()}}
+{\footnotesize\ttfamily virtual rpi\+\_\+rt\+::rt\+\_\+settings\+::$\sim$rt\+\_\+settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor for \mbox{\hyperlink{classrpi__rt_1_1rt__settings}{rt\+\_\+settings}}. 
+
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}\label{classrpi__rt_1_1rt__settings_a9e441df45fe9eb75a597b1dce1609359}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!applyAffinity@{applyAffinity}}
+\index{applyAffinity@{applyAffinity}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{applyAffinity()}{applyAffinity()}}
+{\footnotesize\ttfamily void rpi\+\_\+rt\+::rt\+\_\+settings\+::apply\+Affinity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Pins the calling thread to a C\+PU Core mentioned in the constructor. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the function fails to attach affinity \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}\label{classrpi__rt_1_1rt__settings_aad226b96850b47051aff477a3038a255}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!applyHighPerfModeToAllCPUs@{applyHighPerfModeToAllCPUs}}
+\index{applyHighPerfModeToAllCPUs@{applyHighPerfModeToAllCPUs}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{applyHighPerfModeToAllCPUs()}{applyHighPerfModeToAllCPUs()}}
+{\footnotesize\ttfamily void rpi\+\_\+rt\+::rt\+\_\+settings\+::apply\+High\+Perf\+Mode\+To\+All\+C\+P\+Us (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Changes power governance mode of C\+PU to high performance mode. 
+
+\begin{DoxyNote}{Note}
+This function is not tested yet 
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the program fails to apply high performance mode \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}\label{classrpi__rt_1_1rt__settings_ad5be4072767fe6639b4e60e2f218052d}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!applyMemoryLock@{applyMemoryLock}}
+\index{applyMemoryLock@{applyMemoryLock}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{applyMemoryLock()}{applyMemoryLock()}}
+{\footnotesize\ttfamily void rpi\+\_\+rt\+::rt\+\_\+settings\+::apply\+Memory\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Allocates and locks memory for the caller. 
+
+\begin{DoxyNote}{Note}
+This function is not implemented yet 
+\end{DoxyNote}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}\label{classrpi__rt_1_1rt__settings_a47c995e173e0141431d1efa8b677fc89}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!applyPriority@{applyPriority}}
+\index{applyPriority@{applyPriority}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{applyPriority()}{applyPriority()}}
+{\footnotesize\ttfamily void rpi\+\_\+rt\+::rt\+\_\+settings\+::apply\+Priority (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Applies specified thread priority to the calling thread. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the thread priority fails to be set \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}\label{classrpi__rt_1_1rt__settings_adb486fccbe992e089b74d4b69fad9956}} 
 \index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!applySchedulingTimeChange@{applySchedulingTimeChange}}
 \index{applySchedulingTimeChange@{applySchedulingTimeChange}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
@@ -74,8 +160,23 @@ Changes sched\+\_\+rt\+\_\+runtime\+\_\+us time to -\/1, Find more information h
 {\em std\+::runtime\+\_\+error} & if the file /proc/sys/kernel/sched\+\_\+rt\+\_\+runtime\+\_\+us is not accessible, or if the write fails \\
 \hline
 \end{DoxyExceptions}
+\mbox{\Hypertarget{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}\label{classrpi__rt_1_1rt__settings_a789d33cda05c6b0b3767459a0a5d82ef}} 
+\index{rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}!setCPUDmaLatency@{setCPUDmaLatency}}
+\index{setCPUDmaLatency@{setCPUDmaLatency}!rpi\_rt::rt\_settings@{rpi\_rt::rt\_settings}}
+\doxysubsubsection{\texorpdfstring{setCPUDmaLatency()}{setCPUDmaLatency()}}
+{\footnotesize\ttfamily void rpi\+\_\+rt\+::rt\+\_\+settings\+::set\+C\+P\+U\+Dma\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set C\+PU D\+MA Latency to 0, Find more information here\+:https\+://access.redhat.\+com/articles/65410. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the method fails to set C\+PU D\+MA Latency \\
+\hline
+\end{DoxyExceptions}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-include/rpi-\/rt/rt.\+hpp\end{DoxyCompactItemize}
+include/rpi-\/rt/\mbox{\hyperlink{rt_8hpp}{rt.\+hpp}}\end{DoxyCompactItemize}

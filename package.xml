@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rpi-rt</name>
-  <version>0.1.0</version>
+  <version>1.0.0</version>
   <description>Library for RT Use of an RPI 4B</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/rpi-rt</url> -->
+  <url type="website">https://vedran97.github.io/rpi-rt/</url>
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->

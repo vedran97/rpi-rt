@@ -6,6 +6,7 @@
 #include <fstream>
 
 namespace rpi_rt{
+/// @brief Enum class to represent CPU Cores
 enum class CPUS:size_t{
 CPU1,
 CPU2,
@@ -36,15 +37,22 @@ public:
         assert((this->memoryToBeLocked)>0);
     }
     /// @brief Pins the calling thread to a CPU Core mentioned in the constructor
+    /// @throws std::runtime_error if the function fails to attach affinity
     void applyAffinity()const;
 
     /// @brief Applies specified thread priority to the calling thread
+    /// @throws std::runtime_error if the thread priority fails to be set
     void applyPriority()const;
 
-    /// @brief Allocates and locks memory for the caller
+    /**
+     * @brief Allocates and locks memory for the caller
+     * @note  This function is not implemented yet
+    */
     void applyMemoryLock()const;
 
     /// @brief Changes power governance mode of CPU to high performance mode
+    /// @note This function is not tested yet
+    /// @throws std::runtime_error if the program fails to apply high performance mode
     void applyHighPerfModeToAllCPUs()const;
 
     /**
@@ -55,9 +63,12 @@ public:
     void applySchedulingTimeChange()const;
 
     /// @brief Set CPU  DMA Latency to 0, Find more information here:https://access.redhat.com/articles/65410
+    /// @throws std::runtime_error if the method fails to set CPU DMA Latency
+    /// @note This function is not tested yet
     void setCPUDmaLatency();
 
-    ~rt_settings();
+    /// @brief Destructor for rt_settings
+    virtual ~rt_settings();
 };
 
 };
